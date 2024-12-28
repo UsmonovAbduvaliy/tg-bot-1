@@ -39,16 +39,16 @@ public class BotServer {
                         user.setVerificationCode(verificationCode);
 
 
-//                        sendEmail(
-//                                text,
-//                                "Tasdiqlash kodi",
-//                                "Salom! Sizning tasdiqlash kodingiz: " + verificationCode
-//                        );
+                        sendEmail(
+                                text,
+                                "Tasdiqlash kodi",
+                                "Salom! Sizning tasdiqlash kodingiz: " + verificationCode
+                        );
 
 
                         SendMessage message = new SendMessage(
                                 chatId,
-                                "Emailga tasdiqlash kodi yuborildi. Iltimos, kodni kiriting. ||" + verificationCode + "||"
+                                "Emailga tasdiqlash kodi yuborildi. Iltimos, kodni kiriting."
                         );
                         bot.execute(message);
                         user.setStatus(Status.VERIFICATION);
@@ -219,7 +219,7 @@ public class BotServer {
 
     private static void sendEmail(String toEmail, String subject, String body) {
         final String fromEmail = "inosukebest1@gmail.com";
-        final String password = "5271 1814";
+        final String password = "";
 
         Properties properties = new Properties();
         properties.put("mail.smtp.host", "smtp.gmail.com");
